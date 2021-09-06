@@ -1,0 +1,122 @@
+@font-face
+  font-family: Gangfont
+  src: url(./Gangfont-Regular.ttf)
+@font-face
+  font-family: 'Impact'
+  src: local('Impact'), url(./Impact.ttf) format('truetype')
+  font-weight: normal
+  font-style: normal
+  
+html
+  background-color: red
+  color: white
+  font-family: Gangfont
+  position: relative
+  min-height: 100%
+body
+  min-height: 100%
+.App
+  text-align: center
+  max-width: 600px
+  display: block
+  margin: 1em auto
+  #logo
+    max-width: 75%
+  h1
+    font-size: 2.5em
+    margin-top: 0
+#uploader
+  .imgBox
+    border: 1px dashed white
+    padding: 1em
+    min-height: 4em
+    display: flex
+    font-size: 1.5em
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    img
+      max-width: 50%
+  #preSelect
+    cursor: pointer
+    text-decoration: underline
+    margin-top: 1em
+    display: block
+  #filetag
+    display: none
+  #demoPorts
+    img
+      max-width: 50%
+      height: 300px
+      border: 1px solid black
+      margin:  0 0 1em 1em
+      &.selected
+        border: 1px solid white
+  button
+    display: block
+    margin: 1em auto 0
+  #navBtns
+    margin-top: 1em
+    button
+      margin: 0 .5em
+      display: inline-block
+#frameHolder
+  position: relative
+  cursor: grab
+  overflow: hidden
+  border: 1px solid blue
+  margin: 0 auto
+  #frame
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 255
+    pointer-events: none
+  #uploadedImg
+    position: absolute
+    top: 0
+    left: 0
+canvas
+  border-radius: .5em
+  border: 3px solid black
+  margin-bottom: 1em
+#instructions
+  h1
+    font-size: 2em
+    margin: 0 0 1em 0
+    border-bottom: 3px solid white
+  h2
+    margin-top: .5em
+#zoomBlock
+  width: 100%
+  margin-top: 1em
+  #zoomLbl
+    font-size: 1.5em
+    width: 4em
+  input
+    width: calc(100% - 18em)
+#statPage
+  form
+    width: 100%
+    margin: 0 auto
+    text-align: left
+    font-size: 1.5em
+    label
+      width: 4em
+      display: inline-block
+    input, select
+      max-width: 50%
+#strikeLink
+  color: white
+  margin-top: 1em
+  display: block
+  position: absolute
+  bottom: 1em
+  left: 0
+  right: 0
+#root
+  padding-bottom: 3em
+#finalBtns
+  button
+    margin: 0 .5em
+    display: inline-block

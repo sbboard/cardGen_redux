@@ -1,56 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import "./App.sass";
+import Uploader from "./Uploader/Uploader";
+import CardOutput from "./CardOutput/Canvas";
+import teamList from "./teamList";
+import logo from "./strikeOutLogo.png"
 
 function App() {
+  const playerInfo = useSelector((state) => state.playerInfo);
+  const isFinished = useSelector((state) => state.process.isFinished);
+
+  const display = function () {
+    if (isFinished) {
+      return <CardOutput />;
+    } else {
+      return <Uploader />;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <img id="logo" src={logo} alt="StrikeOut Logo" />
+      <h1>Summer Classics Card Creator</h1>
+      {display()}
+      {playerInfo.name}
+      <a
+        id="strikeLink"
+        href="https://twitter.com/gyangufaito/status/1347286890152648704"
+      >
+        Read StrikeOut every Wednesday!
+      </a>
     </div>
   );
 }
